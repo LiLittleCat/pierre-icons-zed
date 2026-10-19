@@ -184,6 +184,13 @@ for (const [name, token] of Object.entries(fileNames)) {
   if (/^[a-z]+\.md$/.test(name)) fileStems[name.slice(0, -3).toUpperCase() + ".md"] = token;
 }
 
+// Extensions are case-sensitive too: photo.JPG doesn't match "jpg". Add upper-case
+// variants (JPG, PNG, MD, ...) without overriding any explicit mapping.
+for (const [ext, token] of Object.entries(fileSuffixes)) {
+  const upper = ext.toUpperCase();
+  if (upper !== ext) fileSuffixes[upper] ??= token;
+}
+
 // ===========================================================================
 // Output
 // ===========================================================================

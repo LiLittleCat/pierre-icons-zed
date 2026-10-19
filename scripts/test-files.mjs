@@ -23,8 +23,10 @@ const add = (icon, file) => {
 };
 
 for (const [suffix, icon] of Object.entries(theme.file_suffixes)) {
-  // Bare names like LICENSE / CHANGELOG are matched as whole file names.
-  add(icon, /^[A-Z]+$/.test(suffix) ? suffix : `sample.${suffix}`);
+  const isUpperVariant = suffix !== suffix.toLowerCase() && suffix.toLowerCase() in theme.file_suffixes;
+  // upper.JPG next to sample.jpg (different stems, so they don't collide on macOS);
+  // bare names like LICENSE / CHANGELOG are matched as whole file names.
+  add(icon, isUpperVariant ? `upper.${suffix}` : /^[A-Z]+$/.test(suffix) ? suffix : `sample.${suffix}`);
 }
 for (const [name, icon] of Object.entries(theme.file_stems)) add(icon, name);
 add("default", "sample.unknown-extension");
