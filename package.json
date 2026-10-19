@@ -1,0 +1,15 @@
+{
+  "name": "pierre-icons-zed",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "screenshot": "node scripts/screenshot.mjs"
+  },
+  "devDependencies": {
+    "@pierre/trees": "1.0.0-beta.6",
+    "@pierre/vscode-icons": "0.0.9"
+  },
+  "license": "Apache-2.0",
+  "repository": "https://github.com/LiLittleCat/pierre-icons-zed"
+}

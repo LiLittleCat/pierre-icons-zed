@@ -1,0 +1,7 @@
+id = "pierre-icons"
+name = "Pierre Icons"
+version = "0.1.0"
+schema_version = 1
+authors = ["Yi Liu <hi@yl.do>"]
+description = "Unofficial port of Pierre's file icons (as used in Claude Desktop) to Zed, in colour and mono for dark and light themes."
+repository = "https://github.com/LiLittleCat/pierre-icons-zed"
